@@ -8,3 +8,5 @@ It doesn't pretend to be (and it is certainly not) a high-performance implementa
 I share it here in case this helps others.
 
 You can do what you want with it.
+
+The texture credits go to the Faithful Team: https://faithful.team/
