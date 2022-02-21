@@ -14,8 +14,8 @@ background_color = (129, 138, 145)
 black = 0, 0, 0
 
 # Width and height of the map
-width = 450
-height = 350
+width = 400
+height = 400
 size = (width, height)
 
 # Width and height of textures
@@ -28,7 +28,7 @@ dbz = 0.0000001
 
 # Define rotational and movement speed
 rot_speed = 0.01
-mov_speed =  0.03
+mov_speed =  0.01
 
 # Define the world map
 # As you can see, the world map is just a two-dimensional Python list
@@ -242,6 +242,11 @@ while True:
                 # First, from the map box number, get the index of the texture to draw
                 # Second, from the x and y texture coordinates, retrieve the exact RGB color to draw
                 color = textures[map[map_x][map_y]][tex_x][tex_y]
+                if(side == 1):
+                    # If it is a side wall, decreases the color brightness
+                    # To do so, it removes the last bit in order to divide the RGB value by two, then sets the first bit of every byte to zero
+                    # in order to prevent screwing up the colors
+                    color = (color >> 1) & 8355711
                 canvas.set_at((i, y), (color)) # Draw the pixel with the right color into the screen
                 tex_pos += step # Increase the step by one pixel
     screen.blit( canvas, ( 0, 0 ) ) # Blit the canvas
