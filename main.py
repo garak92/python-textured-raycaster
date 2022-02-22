@@ -19,7 +19,7 @@ black = 0, 0, 0
 
 # Width and height of the map
 width = 400
-height = 400
+height = 300
 size = (width, height)
 
 # Width and height of textures
