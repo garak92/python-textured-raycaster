@@ -9,6 +9,9 @@ from pygame.locals import *
 # Initialize pygame
 pygame.init()
 
+# Create clock
+clock = pygame.time.Clock()
+
 # Define colors
 wall_color = (75,233,250)
 background_color = (129, 138, 145)
@@ -279,3 +282,4 @@ while True:
     canvas = pygame.pixelcopy.make_surface(canvas_array) # Convert canvas array to  surface
     screen.blit( canvas, ( 0, 0 ) ) # Blit the canvas into the screen
     pygame.display.update() # Refresh the display
+    clock.tick(15)
