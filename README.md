@@ -10,3 +10,5 @@ I share it here in case this helps others.
 You can do what you want with it.
 
 The texture credits go to the Faithful Team: https://faithful.team/
+
+![alt text](https://github.com/garak92/python-textured-raycaster/blob/main/raycaster1.png)
