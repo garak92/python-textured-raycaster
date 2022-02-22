@@ -60,9 +60,6 @@ map =  [
 # Create a screen
 screen = pygame.display.set_mode(size)
 
-# Create a surface canvas
-canvas = pygame.Surface( ( width, height ) )
-
 # Texture loading
 # This is done using surfarray.array3d, which converts the images into two-dimensional arrays of RGB colors
 # which then can be easily accessed just as any other Python list
@@ -88,7 +85,10 @@ pygame.key.set_repeat(1,10)
 
 # GAME LOOP
 while True:
+    # Create a surface canvas
+    canvas = pygame.Surface( ( width, height ) )
     canvas.fill( background_color ) # The background is created
+    canvas_array = pygame.surfarray.array3d(canvas) # Convert the surface canvas into an array for direct pixel manipulation
 
     # Keystroke event-handling logic
     for event in pygame.event.get():
@@ -247,7 +247,8 @@ while True:
                     # To do so, it removes the last bit in order to divide the RGB value by two, then sets the first bit of every byte to zero
                     # in order to prevent screwing up the colors
                     color = (color >> 1) & 8355711
-                canvas.set_at((i, y), (color)) # Draw the pixel with the right color into the screen
                 tex_pos += step # Increase the step by one pixel
+                canvas_array[i][y] = color # Draw the pixel with the right color into the screen
+    canvas = pygame.pixelcopy.make_surface(canvas_array)
     screen.blit( canvas, ( 0, 0 ) ) # Blit the canvas
-    pygame.display.flip() # Refresh the display
+    pygame.display.update() # Refresh the display
