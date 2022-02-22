@@ -252,9 +252,7 @@ while True:
 
         # From wall_x, it is easy to infer the corresponding x-texture coordinate
         tex_x = int(wall_x * texture_width)
-        if(side == 0 and ray_direction_y > 0):
-            tex_x = texture_width - tex_x - 1
-        if(side == 1 and ray_direction_y < 0):
+        if((side == 0 and ray_direction_y > 0) or (side == 1 and ray_direction_y < 0)):
             tex_x = texture_width - tex_x - 1
         
         # How much to increase the texture coordinate per screen pixel
@@ -277,7 +275,7 @@ while True:
                 else:
                     color = textures[tex_num][tex_x][tex_y]
                 tex_pos += step # Increase the step by one pixel
-                canvas_array[i][y] = color # Draw the pixel with the right color into the screen
-    canvas = pygame.pixelcopy.make_surface(canvas_array)
-    screen.blit( canvas, ( 0, 0 ) ) # Blit the canvas
+                canvas_array[i][y] = color # Assign the pixel with the right color into the canvas array
+    canvas = pygame.pixelcopy.make_surface(canvas_array) # Convert canvas array to  surface
+    screen.blit( canvas, ( 0, 0 ) ) # Blit the canvas into the screen
     pygame.display.update() # Refresh the display
