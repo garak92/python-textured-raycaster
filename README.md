@@ -11,4 +11,4 @@ You can do what you want with it.
 
 The texture credits go to the Faithful Team: https://faithful.team/
 
-![alt text](https://github.com/garak92/python-textured-raycaster/blob/main/raycaster1.png)
+![alt text](https://github.com/garak92/python-textured-raycaster/blob/main/raycaster1.png) ![alt text](https://github.com/garak92/python-textured-raycaster/blob/main/raycaster2.png) ![alt text](https://github.com/garak92/python-textured-raycaster/blob/main/raycaster3.png)  
