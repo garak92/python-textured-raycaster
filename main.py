@@ -272,9 +272,10 @@ while True:
                 # Retrieve the RGB color to draw from the textures array
                 # First, from the map box number, get the index of the texture to draw
                 # Second, from the x and y texture coordinates, retrieve the exact RGB color to draw
-                color = textures[tex_num][tex_x][tex_y]
                 if(side == 1):
                     color = dark_textures[tex_num][tex_x][tex_y] # If it is a side wall, decreases the color brightness
+                else:
+                    color = textures[tex_num][tex_x][tex_y]
                 tex_pos += step # Increase the step by one pixel
                 canvas_array[i][y] = color # Draw the pixel with the right color into the screen
     canvas = pygame.pixelcopy.make_surface(canvas_array)
