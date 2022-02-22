@@ -4,6 +4,7 @@ from math import cos
 from math import sin
 from math import floor
 import numpy as np
+from pygame.locals import *
 
 # Initialize pygame
 pygame.init()
@@ -58,7 +59,9 @@ map =  [
             ]
 
 # Create a screen
-screen = pygame.display.set_mode(size)
+#screen = pygame.display.set_mode(size)
+
+screen = pygame.display.set_mode(size, DOUBLEBUF, 24)
 
 # Texture loading
 # This is done using surfarray.array3d, which converts the images into two-dimensional arrays of RGB colors
@@ -229,9 +232,9 @@ while True:
         if(side == 1 and ray_direction_y < 0):
             tex_x = texture_width - tex_x - 1
         
-        # How much to increase the textures coordinate per screen pixel
+        # How much to increase the texture coordinate per screen pixel
         step = 1.0 * texture_height / line_height
-        # Starting textures coordinate
+        # Starting texture coordinate
         tex_pos = (draw_start - height / 2 + line_height / 2) * step
 
         # RENDERING LOGIC
