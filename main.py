@@ -32,31 +32,31 @@ rot_speed = 0.01
 mov_speed =  0.01
 
 # Define the world map
-# As you can see, the world map is just a two-dimensional Python list
+# As you can see, the world map is just a two-dimensional Python tuple
 # where zeroes represent empty space, and non-zero integers represent
 # different textures
-map =  [
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 0, 0, 1],
-            [1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 4, 4, 0, 0, 4, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 5, 5, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 5, 5, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-            [1, 4, 4, 0, 0, 4, 0, 0, 5, 5, 5, 5, 0, 1, 0, 0, 1, 0, 1, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-            ]
+map =  (
+            (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 0, 0, 1),
+            (1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 4, 4, 0, 0, 4, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 5, 5, 0, 0, 0, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 5, 5, 0, 0, 0, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+            (1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1),
+            (1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1),
+            (1, 4, 4, 0, 0, 4, 0, 0, 5, 5, 5, 5, 0, 1, 0, 0, 1, 0, 1, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1),
+            (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1),
+            (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+            )
 
 # Create a screen
 #screen = pygame.display.set_mode(size)
@@ -65,16 +65,41 @@ screen = pygame.display.set_mode(size, DOUBLEBUF, 24)
 
 # Texture loading
 # This is done using surfarray.array3d, which converts the images into two-dimensional arrays of RGB colors
-# which then can be easily accessed just as any other Python list
-bricks = pygame.surfarray.array3d(pygame.image.load('./textures/bricks.png'))
+# which then can be easily accessed just as a plain old numpy array
+bricks = pygame.surfarray.array3d(pygame.image.load('./textures/bricks.png').convert())
 dirt = pygame.surfarray.array3d(pygame.image.load('./textures/dirt.png'))
-grass = pygame.surfarray.array3d(pygame.image.load('./textures/grass_block_side.png'))
-cobblestone = pygame.surfarray.array3d(pygame.image.load('./textures/cobblestone.png'))
-netherbrick = pygame.surfarray.array3d(pygame.image.load('./textures/chiseled_nether_bricks.png'))
+grass = pygame.surfarray.array3d(pygame.image.load('./textures/grass_block_side.png').convert())
+cobblestone = pygame.surfarray.array3d(pygame.image.load('./textures/cobblestone.png').convert())
+netherbrick = pygame.surfarray.array3d(pygame.image.load('./textures/chiseled_nether_bricks.png').convert())
 
-# All the textures are put inside an array
-# The 0 texture is just a blank placeholder and it is not used
-textures = np.asarray([[0,0,0], bricks, dirt, grass, cobblestone, netherbrick], dtype=object)
+# This function takes a surfarray and obscures it
+# To do so, it removes the last bit in order to divide the RGB value by two, then sets the first bit of every byte to zero
+# in order to prevent screwing up the colors
+def darken_texture(texture): 
+    return (texture>> 1) & 8355711
+
+# Create tuple of textures
+textures = np.asarray(
+    (
+        bricks, 
+        dirt, 
+        grass, 
+        cobblestone, 
+        netherbrick
+        ), dtype=object
+    )
+
+# Tuple of precalculated darkened textures
+# This is precalculated because it is it is very costly to do it during the game loop
+dark_textures = np.asarray(
+    (
+        darken_texture(bricks), 
+        darken_texture(dirt), 
+        darken_texture(grass), 
+        darken_texture(cobblestone), 
+        darken_texture(netherbrick)
+        ), dtype=object
+    )
 
 
 # This raycasting implementation relies on vector calculations
@@ -237,6 +262,9 @@ while True:
         # Starting texture coordinate
         tex_pos = (draw_start - height / 2 + line_height / 2) * step
 
+        # Texture number
+        tex_num = map[map_x][map_y] - 1
+
         # RENDERING LOGIC
         if(hit): # Check if a wall was hit
             for y in range(int(draw_start), int(draw_end)): # For each y wall coordinate, calculate the corresponding y texture coordinate
@@ -244,12 +272,9 @@ while True:
                 # Retrieve the RGB color to draw from the textures array
                 # First, from the map box number, get the index of the texture to draw
                 # Second, from the x and y texture coordinates, retrieve the exact RGB color to draw
-                color = textures[map[map_x][map_y]][tex_x][tex_y]
+                color = textures[tex_num][tex_x][tex_y]
                 if(side == 1):
-                    # If it is a side wall, decreases the color brightness
-                    # To do so, it removes the last bit in order to divide the RGB value by two, then sets the first bit of every byte to zero
-                    # in order to prevent screwing up the colors
-                    color = (color >> 1) & 8355711
+                    color = dark_textures[tex_num][tex_x][tex_y] # If it is a side wall, decreases the color brightness
                 tex_pos += step # Increase the step by one pixel
                 canvas_array[i][y] = color # Draw the pixel with the right color into the screen
     canvas = pygame.pixelcopy.make_surface(canvas_array)
