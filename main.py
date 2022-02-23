@@ -267,18 +267,18 @@ while True:
         tex_num = map[map_x][map_y] - 1
 
         # RENDERING LOGIC
-        if(hit): # Check if a wall was hit
-            for y in range(int(draw_start), int(draw_end)): # For each y wall coordinate, calculate the corresponding y texture coordinate
-                tex_y = int(tex_pos) & (texture_height - 1)
-                # Retrieve the RGB color to draw from the textures array
-                # First, from the map box number, get the index of the texture to draw
-                # Second, from the x and y texture coordinates, retrieve the exact RGB color to draw
-                if(side == 1):
-                    color = dark_textures[tex_num][tex_x][tex_y] # If it is a side wall, decreases the color brightness
-                else:
-                    color = textures[tex_num][tex_x][tex_y]
-                tex_pos += step # Increase the step by one pixel
-                canvas_array[i][y] = color # Assign the pixel with the right color into the canvas array
+
+        for y in range(int(draw_start), int(draw_end)): # For each y wall coordinate, calculate the corresponding y texture coordinate
+            tex_y = int(tex_pos) & (texture_height - 1)
+            # Retrieve the RGB color to draw from the textures array
+            # First, from the map box number, get the index of the texture to draw
+            # Second, from the x and y texture coordinates, retrieve the exact RGB color to draw
+            if(side == 1):
+                color = dark_textures[tex_num][tex_x][tex_y] # If it is a side wall, decreases the color brightness
+            else:
+                color = textures[tex_num][tex_x][tex_y]
+            tex_pos += step # Increase the step by one pixel
+            canvas_array[i][y] = color # Assign the pixel with the right color into the canvas array
     canvas = pygame.pixelcopy.make_surface(canvas_array) # Convert canvas array to  surface
     screen.blit( canvas, ( 0, 0 ) ) # Blit the canvas into the screen
     pygame.display.update() # Refresh the display
