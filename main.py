@@ -13,9 +13,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 # Define colors
-wall_color = (75,233,250)
 background_color = (129, 138, 145)
-black = 0, 0, 0
 
 # Width and height of the map
 width = 400
@@ -62,7 +60,6 @@ map =  (
             )
 
 # Create a screen
-#screen = pygame.display.set_mode(size)
 
 screen = pygame.display.set_mode(size, DOUBLEBUF, 24)
 
@@ -93,7 +90,7 @@ textures = np.asarray(
     )
 
 # Tuple of precalculated darkened textures
-# This is precalculated because it is it is very costly to do it during the game loop
+# This is precalculated here because it is it is very costly to do it during the game loop
 dark_textures = np.asarray(
     (
         darken_texture(bricks), 
@@ -242,10 +239,10 @@ while True:
         
         # TEXTURING LOGIC
 
-        # Affine texture mapping is applied by finding which coordinate of the wall was hit
-        # and the corresponding texture coordinate
+        # Affine texture mapping is applied by first finding which coordinate of the wall was hit
+        # and then the corresponding texture coordinate
         
-        # Here we find wall_x ,which is the x wall-coordinte hit by the ray
+        # Here we find wall_x, which is the x wall-coordinte hit by the ray
         wall_x = 0.0
         if(side == 0):
             wall_x = pos_y + perpwall_dist * ray_direction_y 
@@ -263,7 +260,7 @@ while True:
         # Starting texture coordinate
         tex_pos = (draw_start - height / 2 + line_height / 2) * step
 
-        # Texture number
+        # Current texture number
         tex_num = map[map_x][map_y] - 1
 
         # RENDERING LOGIC
