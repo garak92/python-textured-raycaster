@@ -30,7 +30,7 @@ dbz = 0.0000001
 
 # Define rotational and movement speed
 rot_speed = 0.01
-mov_speed =  0.01
+mov_speed =  0.02
 
 # Define the world map
 # As you can see, the world map is just a two-dimensional Python tuple
