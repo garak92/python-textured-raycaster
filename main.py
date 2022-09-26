@@ -36,7 +36,7 @@ mov_speed =  0.02
 # As you can see, the world map is just a two-dimensional Python tuple
 # where zeroes represent empty space, and non-zero integers represent
 # different textures
-map =  (
+world_map =  (
             (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
             (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
             (1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
@@ -145,14 +145,14 @@ while True:
                 # In order to move forwards or backwards, a vector sum is applied in order to change the x and y coordinates
                 # The position vector is added to the direction vector multiplied by the movement speed
             if event.key == pygame.K_UP:
-                if not map[int(pos_x + dir_x * mov_speed)][int(pos_y)]: 
+                if not world_map[int(pos_x + dir_x * mov_speed)][int(pos_y)]: 
                     pos_x += dir_x *  mov_speed
-                if not map[int(pos_x)][int(pos_y + dir_y * mov_speed)]:
+                if not world_map[int(pos_x)][int(pos_y + dir_y * mov_speed)]:
                     pos_y += dir_y * mov_speed
             if event.key == pygame.K_DOWN:
-                if not map[int(pos_x - dir_x * mov_speed)][int(pos_y)]: 
+                if not world_map[int(pos_x - dir_x * mov_speed)][int(pos_y)]: 
                     pos_x -= dir_x *  mov_speed
-                if not map[int(pos_x)][int(pos_y - dir_y * mov_speed)]:
+                if not world_map[int(pos_x)][int(pos_y - dir_y * mov_speed)]:
                     pos_y -= dir_y * mov_speed
 
     
@@ -217,7 +217,7 @@ while True:
                 map_y += step_y
                 side = 1 # If we are closer to a y-side, then update to 1
             # Wall check
-            if(map[map_x][map_y]>0): 
+            if(world_map[map_x][map_y]>0): 
                 hit = 1
         
         # Calculate the distance between the wall and the player
@@ -261,7 +261,7 @@ while True:
         tex_pos = (draw_start - height / 2 + line_height / 2) * step
 
         # Current texture number
-        tex_num = map[map_x][map_y] - 1
+        tex_num = world_map[map_x][map_y] - 1
 
         # RENDERING LOGIC
 
